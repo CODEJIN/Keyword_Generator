@@ -18,12 +18,6 @@ class Keyword_Generator:
     def Tensor_Generate(self):
         placeholder_Dict = self.feeder.placeholder_Dict;
 
-        self.placeholder_Dict = {
-            'Is_Training': tf.placeholder(tf.bool, name='Is_Training_Placeholder'),
-            'Abstract': tf.placeholder(tf.int32, shape=(None, None), name='Abstract_Placeholder'),
-            'Keyword': tf.placeholder(tf.int32, shape=(None,), name='Keyword_Placeholder')
-            }
-
         #Index and position embedding
         with tf.variable_scope('model') as scope:
             encoder_Embedding_Tensor = Embedding(
